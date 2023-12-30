@@ -1,0 +1,67 @@
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+:root {
+  --border-radius: 15px;
+  --primary-border: solid 1px #6c727f;
+  --bg-tertiary: #6c727f;
+  --color-primary: white;
+  --bg-secondary: #282b30;
+  --bg-primary: #4e80ee;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-normal: 16px;
+  --font-size-lg: 32px;
+
+  font-family: 'Be Vietnam Pro', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #6c727f;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  background: #17181a;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  align-items: flex-start;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+select,
+input {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+ul,
+li,
+p {
+  margin: 0;
+}
