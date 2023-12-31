@@ -6,6 +6,9 @@
   box-sizing: border-box;
 }
 :root {
+  /* --min-font-size: 14px;
+  --max-font-size: 24px; */
+
   --border-radius: 15px;
   --primary-border: solid 1px #6c727f;
   --bg-tertiary: #6c727f;
@@ -25,6 +28,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #6c727f;
+
+  /* font-size: clamp(var(--min-font-size), vw, var(--max-font-size)); */
 }
 
 a {

@@ -109,6 +109,7 @@ function Homepage() {
                   <div className="country__header">Name</div>
                   <div className="country__header">Population</div>
                   <div className="country__header">Area (km2)</div>
+                  <div className="country__header lg">Region</div>
 
                   <div className="country__list--item">
                     <img src="" alt="" />
@@ -116,6 +117,7 @@ function Homepage() {
                   <div className="country__list--item">China</div>
                   <div className="country__list--item">1,402,112,000</div>
                   <div className="country__list--item">9,706,961</div>
+                  <div className="country__list--item lg">9,706,961</div>
 
                   <div className="country__list--item">
                     <img src="" alt="" />
