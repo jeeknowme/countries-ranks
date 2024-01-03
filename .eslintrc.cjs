@@ -10,7 +10,7 @@ module.exports = {
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'react', 'react-hooks', 'styled-components'],
   rules: {
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
@@ -30,6 +30,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'styled-components/css-variables': 2,
     'react/prop-types': ['error', { ignore: ['children'] }], // Enable the rule for PropTypes
   },
 };
