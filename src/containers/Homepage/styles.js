@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { media } from '../../media';
 import { HiddenInput } from '../../components/Input/styles';
+
 export const MainContentWrapper = styled.div`
   position: relative;
 `;

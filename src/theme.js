@@ -7,6 +7,7 @@ export const theme = {
     primary: '#4e80ee',
     secondary: '#282b30',
     tertiary: '#6c727f',
+    shark: '#1B1D1F',
   },
   font: {
     size: {

@@ -7,7 +7,6 @@ import {
   MainContentFilter,
 } from './styles';
 
-import { Country } from './CountryList/styles';
 import CountryList from './CountryList/CountryList';
 
 function Homepage() {
