@@ -5,7 +5,7 @@ function Header() {
     <>
       <HeaderWrapper>
         <HeroContainer>
-          <HeroImage src="assets/images/Logo.svg" alt="Logo" />
+          <HeroImage src="/assets/images/Logo.svg" alt="Logo" />
         </HeroContainer>
       </HeaderWrapper>
     </>

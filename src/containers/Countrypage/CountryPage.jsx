@@ -11,12 +11,12 @@ import {
   Population,
 } from './styles';
 
-const CountryPage = () => {
+const CountryPageContainer = () => {
   return (
     <MainContentWrapper>
       <MainContent>
         <FlagContainer>
-          <img src="assets/images/hero-image-wr.jpg" alt="Flag" />
+          <img src="/assets/images/hero-image-wr.jpg" alt="Flag" />
         </FlagContainer>
         <CountryTitle>India</CountryTitle>
         <CountrySubTitle>Republic of India</CountrySubTitle>
@@ -58,4 +58,4 @@ const CountryPage = () => {
   );
 };
 
-export default CountryPage;
+export default CountryPageContainer;
