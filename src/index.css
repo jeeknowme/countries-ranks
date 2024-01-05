@@ -70,3 +70,8 @@ li,
 p {
   margin: 0;
 }
+
+button,
+[type='checkbox'] + label {
+  cursor: pointer;
+}

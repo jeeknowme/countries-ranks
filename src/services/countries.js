@@ -4,7 +4,8 @@ const BASE_URL = 'https://restcountries.com/v3.1/';
 
 const all = async () => {
   const endPoint = 'all';
-  const filter = '?fields=flags,name,population,area,region';
+  const filter =
+    '?fields=flags,name,population,area,region,independent,unMember';
 
   try {
     const res = await axios.get(BASE_URL + endPoint + filter);
