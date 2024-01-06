@@ -2,10 +2,10 @@ import axios from 'axios';
 
 const BASE_URL = 'https://restcountries.com/v3.1/';
 const filter =
-  '?fields=flags,name,population,area,region,independent,unMember,subregion,borders,capital,languages,currencies,continents';
+  ';fields=flags,name,population,area,region,independent,unMember,subregion,borders,capital,languages,currencies,continents';
 
 const all = async () => {
-  const endPoint = 'all';
+  const endPoint = 'all?';
 
   try {
     const res = await axios.get(BASE_URL + endPoint + filter);
@@ -17,7 +17,7 @@ const all = async () => {
 };
 
 const findByName = async (name) => {
-  const endPoint = `/name/${name}`;
+  const endPoint = `/name/${name}?fullText=true`;
 
   try {
     const res = await axios.get(BASE_URL + endPoint + filter);
