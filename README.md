@@ -40,4 +40,4 @@ This will start the development server. Open [http://localhost:5173](http://loca
 
 ## Deployment
 
-The application is deployed and can be accessed at https://jeeknowme.github.io/countries-ranks
+The application is deployed and can be accessed at https://wondrous-monstera-baecb5.netlify.app/
