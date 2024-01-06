@@ -12,6 +12,7 @@ const statusInitialState = Object.fromEntries(
 
 const useFilter = createWithEqualityFn(
   devtools((set) => ({
+    searchFilter: '',
     sortFilter: SORT_BY.POPULATION,
     regionFilter: regionInitialState,
     statusFilter: statusInitialState,
@@ -31,6 +32,7 @@ const useFilter = createWithEqualityFn(
         },
       }));
     },
+    setSearchFilter: (value) => set((state) => ({ searchFilter: value })),
   }))
 );
 

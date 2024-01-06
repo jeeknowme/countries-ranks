@@ -15,6 +15,28 @@ export const CountryTable = styled.div`
   ${media.medium`
     grid-template-columns: auto 1fr 1fr 1fr 1fr;
   `}
+
+  > .countryRow {
+    grid-column: span 4;
+    ${media.medium`
+      grid-column: span 5;
+    `}
+    &:hover {
+      padding-left: 10px;
+      background-color: #ffffff1a;
+      border-radius: 10px;
+    }
+
+    > a {
+      display: grid;
+      grid-template-columns: auto 1fr 1fr 1fr;
+      grid-gap: 20px;
+
+      ${media.medium`
+        grid-template-columns: auto 1fr 1fr 1fr 1fr;
+      `}
+    }
+  }
 `;
 
 CountryTable.displayName = 'CountryTable';
@@ -36,7 +58,7 @@ export const CountryHeader = styled.div`
 `;
 CountryHeader.displayName = 'CountryHeader';
 
-export const Country = styled.div`
+export const CountryGrid = styled.div`
   color: ${(props) => props.theme.color.primary};
   padding-top: 15px;
   padding-bottom: 5px;
@@ -57,7 +79,7 @@ export const Country = styled.div`
   }
 `;
 
-Country.displayName = 'Country';
+CountryGrid.displayName = 'CountryGrid';
 
 export const CountryLoading = styled.div`
   margin-top: 15px;

@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-import { Country } from './styles';
+import { CountryGrid } from './styles';
+import { ROUTES } from '../../../utils/routes';
 
 const Countries = ({ country }) => {
   const {
@@ -11,15 +13,17 @@ const Countries = ({ country }) => {
     region,
   } = country;
   return (
-    <>
-      <Country>
-        <img src={flagPng} alt="Flag" />
-      </Country>
-      <Country>{commonName}</Country>
-      <Country>{population}</Country>
-      <Country>{area}</Country>
-      <Country hidden>{region}</Country>
-    </>
+    <div className="countryRow">
+      <Link to={ROUTES.COUNTRY.replace(':name', commonName)}>
+        <CountryGrid>
+          <img src={flagPng} alt="Flag" />
+        </CountryGrid>
+        <CountryGrid>{commonName}</CountryGrid>
+        <CountryGrid>{population}</CountryGrid>
+        <CountryGrid>{area}</CountryGrid>
+        <CountryGrid hidden>{region}</CountryGrid>
+      </Link>
+    </div>
   );
 };
 

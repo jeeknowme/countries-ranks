@@ -1,4 +1,4 @@
 export const ROUTES = {
   HOME: '/',
-  COUNTRY: '/country/:id',
+  COUNTRY: '/country/:name',
 };

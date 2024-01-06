@@ -27,7 +27,7 @@ const CountryRegionFilter = () => {
           type="checkbox"
           name="regions"
           id="americas"
-          checked={regionFilter.americas}
+          checked={regionFilter.Americas}
           value={REGION.AMERICAS}
           onChange={handleRegionFilter}
         />
@@ -36,7 +36,7 @@ const CountryRegionFilter = () => {
           type="checkbox"
           name="regions"
           id="antartic"
-          checked={regionFilter.antarctic}
+          checked={regionFilter.Antarctic}
           value={REGION.ANTARCTIC}
           onChange={handleRegionFilter}
         />
@@ -45,7 +45,7 @@ const CountryRegionFilter = () => {
           type="checkbox"
           name="regions"
           id="africa"
-          checked={regionFilter.africa}
+          checked={regionFilter.Africa}
           value={REGION.AFRICA}
           onChange={handleRegionFilter}
         />
@@ -54,7 +54,7 @@ const CountryRegionFilter = () => {
           type="checkbox"
           name="regions"
           id="asia"
-          checked={regionFilter.asia}
+          checked={regionFilter.Asia}
           value={REGION.ASIA}
           onChange={handleRegionFilter}
         />
@@ -63,7 +63,7 @@ const CountryRegionFilter = () => {
           type="checkbox"
           name="regions"
           id="europe"
-          checked={regionFilter.europe}
+          checked={regionFilter.Europe}
           value={REGION.EUROPE}
           onChange={handleRegionFilter}
         />
@@ -72,7 +72,7 @@ const CountryRegionFilter = () => {
           type="checkbox"
           name="regions"
           id="oceania"
-          checked={regionFilter.oceania}
+          checked={regionFilter.Oceania}
           value={REGION.OCEANIA}
           onChange={handleRegionFilter}
         />
