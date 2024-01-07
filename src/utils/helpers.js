@@ -20,6 +20,8 @@ export const setUrlSearchParams = (key, value, navigate, location) => {
       pathname: location.pathname,
       search: params.toString(),
     });
+
+    return;
   }
 
   const path = `${location.pathname}?${params.toString()}`;
