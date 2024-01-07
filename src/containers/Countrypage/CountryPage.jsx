@@ -14,7 +14,6 @@ import {
 } from './styles';
 
 import { findByName, getNeighboringCountries } from '../../services/countries';
-import LoadingSpinner from '../../components/Spinner/LoadingSpinner';
 
 const CountryPageContainer = () => {
   const { name } = useParams();
@@ -55,8 +54,6 @@ const CountryPageContainer = () => {
   } = fetchedCountry;
 
   const formatValues = (values) => values.map((value) => `${value}`).join(', ');
-
-  if (isLoading) return <LoadingSpinner />;
 
   return (
     <MainContentWrapper>

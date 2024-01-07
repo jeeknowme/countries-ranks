@@ -13,7 +13,6 @@ import { useCallback, useMemo, useState } from 'react';
 import useFilter from '../../store/filter';
 import { SORT_BY, STATUS } from '../../utils/CONSTANTS';
 import { shallow } from 'zustand/shallow';
-import LoadingSpinner from '../../components/Spinner/LoadingSpinner';
 
 import CountryList from './CountryList/CountryList';
 
@@ -143,8 +142,6 @@ function Homepage() {
     () => Math.ceil(filteredCountries?.length / 10) || 1,
     [paginatedCountries]
   );
-
-  if (isLoading) return <LoadingSpinner />;
 
   return (
     <>
