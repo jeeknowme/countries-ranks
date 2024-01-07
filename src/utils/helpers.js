@@ -13,10 +13,18 @@ export const setUrlSearchParams = (key, value, navigate, location) => {
 
   params.set(key, (() => (Array.isArray(value) ? value.join(',') : value))());
 
-  navigate({
-    pathname: location.pathname,
-    search: params.toString(),
-  });
+  // If on initial page load, save entry on history stack
+
+  if (!Boolean(location.search)) {
+    navigate({
+      pathname: location.pathname,
+      search: params.toString(),
+    });
+  }
+
+  const path = `${location.pathname}?${params.toString()}`;
+
+  navigate(path, { replace: true });
 };
 
 export const isNotEmpty = (params) => {
