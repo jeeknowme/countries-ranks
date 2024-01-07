@@ -1,6 +1,10 @@
 import { createWithEqualityFn } from 'zustand/traditional';
 import { devtools } from 'zustand/middleware';
 import { SORT_BY, REGION, STATUS } from '../utils/CONSTANTS';
+import {
+  getUrlSearchParams,
+  createInitialFilterStateFromUrl,
+} from '../utils/helpers';
 
 const regionInitialState = Object.fromEntries(
   Object.keys(REGION).map((key) => [REGION[key], false])
@@ -13,19 +17,22 @@ const statusInitialState = Object.fromEntries(
 const useFilter = createWithEqualityFn(
   devtools((set) => ({
     searchFilter: '',
-    sortFilter: SORT_BY.POPULATION,
-    regionFilter: regionInitialState,
-    statusFilter: statusInitialState,
-    setSortByFilter: (sortFilter) => set({ sortFilter }),
-    setRegionFilter: (value) =>
+    sortFilter: getUrlSearchParams('sort')?.[0] || SORT_BY.POPULATION,
+    regionFilter: createInitialFilterStateFromUrl(regionInitialState, 'region'),
+    statusFilter: createInitialFilterStateFromUrl(statusInitialState, 'status'),
+    setSortByFilter: (sortFilter) => {
+      set({ sortFilter });
+    },
+    setRegionFilter: (value) => {
       set((state) => ({
         regionFilter: {
           ...state.regionFilter,
           [value]: !state.regionFilter[value],
         },
-      })),
+      }));
+    },
     setStatusFilter: (value) => {
-      return set((state) => ({
+      set((state) => ({
         statusFilter: {
           ...state.statusFilter,
           [value]: !state.statusFilter[value],

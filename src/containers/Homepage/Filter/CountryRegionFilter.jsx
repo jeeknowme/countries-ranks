@@ -5,18 +5,32 @@ import { RegionCheckbox } from './styles';
 import { Region } from './styles';
 import { REGION } from '../../../utils/CONSTANTS';
 import useFilter from '../../../store/filter';
-
-import { useState } from 'react';
+import { shallow } from 'zustand/shallow';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { isNotEmpty, setUrlSearchParams } from '../../../utils/helpers';
 
 const CountryRegionFilter = () => {
-  const { regionFilter, setRegionFilter } = useFilter((state) => ({
-    regionFilter: state.regionFilter,
-    setRegionFilter: state.setRegionFilter,
-  }));
+  const { regionFilter, setRegionFilter } = useFilter(
+    (state) => ({
+      regionFilter: state.regionFilter,
+      setRegionFilter: state.setRegionFilter,
+    }),
+    shallow
+  );
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleRegionFilter = (event) => {
     const { value } = event.target;
     setRegionFilter(value);
+    const { regionFilter } = useFilter.getState();
+
+    const selectedRegionFilter = Object.entries(regionFilter)
+      .filter(([key, value]) => value)
+      .map(([key]) => key);
+
+    setUrlSearchParams('region', selectedRegionFilter, navigate, location);
   };
 
   return (

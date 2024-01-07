@@ -5,6 +5,8 @@ import { StatusList } from './styles';
 import { StatusListItem } from './styles';
 import { StatusCheckbox } from './styles';
 import { STATUS } from '../../../utils/CONSTANTS';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { setUrlSearchParams } from '../../../utils/helpers';
 
 const CountryStatusFilter = () => {
   const { statusFilter, setStatusFilter } = useFilter((state) => ({
@@ -12,9 +14,19 @@ const CountryStatusFilter = () => {
     setStatusFilter: state.setStatusFilter,
   }));
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleStatusSelection = (event) => {
     const { value } = event.target;
     setStatusFilter(value);
+    const { statusFilter } = useFilter.getState();
+
+    const selectedStatusFilter = Object.entries(statusFilter)
+      .filter(([key, value]) => value)
+      .map(([key]) => key);
+
+    setUrlSearchParams('status', selectedStatusFilter, navigate, location);
   };
 
   return (

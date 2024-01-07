@@ -3,6 +3,8 @@ import { FilterSortContainer } from './styles';
 import { FilterTitle } from './styles';
 import { SORT_BY } from '../../../utils/CONSTANTS';
 import { shallow } from 'zustand/shallow';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { setUrlSearchParams } from '../../../utils/helpers';
 
 const CountrySortFilter = () => {
   const { sortFilter, setSortByFilter } = useFilter((state) => {
@@ -12,9 +14,13 @@ const CountrySortFilter = () => {
     };
   }, shallow);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleSort = (event) => {
     const { value } = event.target;
     setSortByFilter(value);
+    setUrlSearchParams('sort', value, navigate, location);
   };
 
   return (
